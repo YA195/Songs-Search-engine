@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songs search engine </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>what are you looking for ?</h1>
+    </div>
+    <div class = 'sc'>
+     <div class= "search">
+          <div class="icon"></div>
+           <div class = "input">
+              <input type="text" placeholder="search" id="lyricssearch">
+            </div>
+            
+        </div>
+    </div>
+    <script>
+        const icon = document.querySelector('.icon');
+        const search = document.querySelector('.search')
+        icon.onclick = function(){
+            search.classList.toggle('active')
+        }
+    </script>
+</body>
+</html>
