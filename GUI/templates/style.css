@@ -84,7 +84,7 @@ h1 {
 .search .input input {
     position: absolute;
     top : 0 ; 
-    width: 120%;
+    width: 299%;
     height : 100% ;
     border: none;
     outline: none;
@@ -101,31 +101,31 @@ h1 {
     border: 1px solid #ddd;
     text-align: left;
 }
-
-.results th {
-    background-color: #f2f2f2;
-}
-
-.results tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.results tr:hover {
-    background-color: #ddd;
-}
-
-.tbody {
+.results td {
     font-family: math !important;
     color: #757087 !important;
 }
 
-.thead {
+.results th {
+    background-color: #f2f2f2;
     color: #3b00ff !important;
     font-family: fangsong !important;
+    font-size: 20px;
 }
+
+.results tr:nth-child(even) {
+    background-color: #1f0d83;
+}
+
+.results tr:hover {
+    background-color: #1f0d83;
+}
+
+
 
 
 .results h2 {
     font-family: monospace !important;
     color: cornflowerblue !important;
+    font-size: 30px;
 }
