@@ -1,10 +1,11 @@
 body {
-    font-family: Arial, sans-serif;
     justify-content: center;
     align-items: center;
     background-color: #000000;
     margin: 0;
     padding: 50px;
+    font-family: 'Brush Script MT';
+    position: initial;
 }
 .sc{
     background-color: #000000;
@@ -66,6 +67,8 @@ body {
 
 h1 {
     color: #0713ff;
+    font-size: 93px;
+    text-align: center;
 }
 
 .search .input 
@@ -81,7 +84,7 @@ h1 {
 .search .input input {
     position: absolute;
     top : 0 ; 
-    width: 100%;
+    width: 120%;
     height : 100% ;
     border: none;
     outline: none;
