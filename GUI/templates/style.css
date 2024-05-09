@@ -113,3 +113,19 @@ h1 {
 .results tr:hover {
     background-color: #ddd;
 }
+
+.tbody {
+    font-family: math;
+    color: #757087;
+}
+
+.thead {
+    color: #3b00ff;
+    font-family: fangsong;
+}
+
+
+.results h2 {
+    font-family: monospace;
+    color: cornflowerblue;
+}
