@@ -3,21 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Songs search engine </title>
-    <link rel="stylesheet" href="style.css">
+    <title>Songs Search Engine</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>what are you looking for ?</h1>
+        <h1>What are you looking for?</h1>
     </div>
-    <div class = 'sc'>
-     <div class= "search">
-          <div class="icon"></div>
-           <div class = "input">
-              <input type="text" placeholder="search" id="lyricssearch">
-           </div>
-           
-      </div>
+    <div class="sc">
+        <div class="search">
+            <div class="icon"></div>
+            <div class="input">
+                <form action="{{ url_for('search') }}" method="post">
+                    <input type="text" placeholder="Search" name="query">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="results">
+        {% if query %}
+            <h2>Search Results for "{{ query }}"</h2>
+            {% if results %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Document ID</th>
+                            <th>Score</th>
+                            <th>Title</th>
+                            <th>Year</th>
+                            <th>Artist</th>
+                            <th>Album</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for doc_id, score, title, year, artist, album  in results %}
+                            <tr>
+                                <td>{{ doc_id }}</td>
+                                <td>{{ score }}</td>
+                                <td>{{ title }}</td>
+                                <td>{{ year }}</td>
+                                <td>{{ artist }}</td>
+                                <td>{{ album }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>No results found.</p>
+            {% endif %}
+        {% endif %}
     </div>
     <script>
         const icon = document.querySelector('.icon');

@@ -90,3 +90,26 @@ h1 {
     outline: none;
     font-size: 18px;
 }
+.results table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.results th, .results td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.results th {
+    background-color: #f2f2f2;
+}
+
+.results tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.results tr:hover {
+    background-color: #ddd;
+}
