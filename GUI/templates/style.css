@@ -115,17 +115,17 @@ h1 {
 }
 
 .tbody {
-    font-family: math;
-    color: #757087;
+    font-family: math !important;
+    color: #757087 !important;
 }
 
 .thead {
-    color: #3b00ff;
-    font-family: fangsong;
+    color: #3b00ff !important;
+    font-family: fangsong !important;
 }
 
 
 .results h2 {
-    font-family: monospace;
-    color: cornflowerblue;
+    font-family: monospace !important;
+    color: cornflowerblue !important;
 }
