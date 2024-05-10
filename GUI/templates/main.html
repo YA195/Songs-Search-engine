@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Songs Search Engine</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
 </head>
 <body>
     <div class="container">
@@ -28,6 +28,7 @@
                 <table>
                     <thead>
                         <tr>
+                            <th>Rank</th>
                             <th>Document ID</th>
                             <th>Score</th>
                             <th>Title</th>
@@ -37,8 +38,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for doc_id, score, title, year, artist, album  in results %}
+                        {% for rank, doc_id, score, title, year, artist, album  in results %}
                             <tr>
+                                <td>{{ rank }}</td>
                                 <td>{{ doc_id }}</td>
                                 <td>{{ score }}</td>
                                 <td>{{ title }}</td>
