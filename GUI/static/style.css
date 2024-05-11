@@ -129,3 +129,41 @@ h1 {
     color: cornflowerblue !important;
     font-size: 30px;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+td {
+    font-family: math !important;
+    color: #757087 !important;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #3b00ff !important;
+    font-family: fangsong !important;
+    font-size: 20px;
+}
+
+tr:nth-child(even) {
+    background-color: #1f0d83;
+}
+
+tr:hover {
+    background-color: #1f0d83;
+}
+
+h2 {
+    font-family: monospace !important;
+    color: cornflowerblue !important;
+    font-size: 30px;
+}

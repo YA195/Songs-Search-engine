@@ -15,7 +15,7 @@
             <div class="icon"></div>
             <div class="input">
                 <form action="{{ url_for('search') }}" method="post">
-                     <input type="text" placeholder="Search" name="query">
+                    <input type="text" placeholder="Search" name="query">
                     <button type="submit">Search</button>
                 </form>
             </div>
@@ -51,11 +51,77 @@
                         {% endfor %}
                     </tbody>
                 </table>
+                <form action="{{ url_for('query_expansion') }}" method="get">
+                    <button type="submit">Query Expansion</button>
+                </form>
             {% else %}
                 <p>No results found.</p>
             {% endif %}
         {% endif %}
     </div>
+    {% if expanded_terms %}
+    <div class="expanded-query">
+        <h2>Search Results for "{{ query }}"</h2>
+        <h2>Expanded Query Terms</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Term</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for term in expanded_terms %}
+                    <tr>
+                        <td>{{ term }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+    {% if before_expansion or after_expansion %}
+    <div class="expansion-results">
+        <h2>Expansion Results</h2>
+        <div class="before-expansion">
+            <h3>Before Expansion</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>DocID</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for docid, score in before_expansion %}
+                        <tr>
+                            <td>{{ docid }}</td>
+                            <td>{{ score }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="after-expansion">
+            <h3>After Expansion</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>DocID</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for docid, score in after_expansion %}
+                        <tr>
+                            <td>{{ docid }}</td>
+                            <td>{{ score }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endif %}
     <script>
         const icon = document.querySelector('.icon');
         const search = document.querySelector('.search')
