@@ -51,7 +51,8 @@
                         {% endfor %}
                     </tbody>
                 </table>
-                <form action="{{ url_for('query_expansion') }}" method="get">
+                 <a href="{{ url_for('evaluation') }}" class="btn">View Evaluation</a>
+                <form class="btn" action="{{ url_for('query_expansion') }}" method="get">
                     <button type="submit">Query Expansion</button>
                 </form>
             {% else %}

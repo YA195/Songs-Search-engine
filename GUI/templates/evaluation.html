@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluation Results</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Evaluation Results</h1>
+    </div>
+
+    <div class="results">
+        <table>
+            <thead>
+                <tr>
+                    <th>Query</th>
+                    <th>Actual Relevant Docs</th>
+                    <th>Precision</th>
+                    <th>time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in evaluation_results %}
+                <tr>
+                    <td>{{ result.query }}</td>
+                    <td>{{ result.actual_docs }}</td>
+                    <td>{{ result.precision }}</td>
+                     <td>{{ result.elapsed_time }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
